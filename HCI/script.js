@@ -36,3 +36,13 @@ function generateQR() {
     alert("Please fill out all required fields!");
   }
 }
+
+function downloadQR() {
+  const qrCanvas = document.querySelector('#qrcode canvas');
+  if(qrCanvas) {
+    const link = document.createElement('a');
+    link.download = 'emergency_qrcode.png';
+    link.href = qrCanvas.toDataURL();
+    link.click();
+  }
+}
